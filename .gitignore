@@ -1,0 +1,21 @@
+RouteLLM
+Routing to Claude Sonnet 4.5
+Perfeito! Vou te dar o passo a passo completo para jogar no GitHub direto do terminal do Linux.
+
+Passo a passo completo
+1. Abrir o terminal e navegar até a pasta do projeto
+bash
+Copy
+cd ~/Downloads/barber_system/nextjs_space
+2. Criar o arquivo .gitignore (para não subir pastas desnecessárias)
+bash
+Copy
+nano .gitignore
+Dentro do editor, cole isso:
+
+node_modules/
+.next/
+dist/
+build/
+.env
+.env.local

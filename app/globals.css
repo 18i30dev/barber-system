@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 43 74% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 6% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 6% 20%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 43 74% 53%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 43 74% 53% / 0.2;
+    --input: 43 74% 53% / 0.2;
+    --ring: 43 74% 53%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: #D4AF37;
+  }
+  .bg-gold {
+    background-color: #D4AF37;
+  }
+  .border-gold {
+    border-color: #D4AF37;
+  }
+}
+
+/* Suppress hydration warnings */
+#__next-build-watcher {
+  display: none !important;
+}

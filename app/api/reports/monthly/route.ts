@@ -41,14 +41,17 @@ export async function GET(request: Request) {
     });
 
     const totalAppointments = appointments.length;
-    const grossRevenue = appointments.reduce((sum, apt) => sum + Number(apt.value), 0);
+    const grossRevenue = appointments.reduce(
+  (sum: number, apt: any) => sum + Number(apt.value),
+  0
+);
     const monthlyFixedCost = settings?.monthlyFixedCost ? Number(settings.monthlyFixedCost) : 0;
     const netProfit = grossRevenue - monthlyFixedCost;
     const averageTicket = totalAppointments > 0 ? grossRevenue / totalAppointments : 0;
 
     // Group by day for chart
     const dailyRevenue: { [key: string]: number } = {};
-    appointments.forEach(apt => {
+    appointments.forEach((apt:any) => {
       const day = new Date(apt.date).getDate();
       const dayKey = day.toString();
       dailyRevenue[dayKey] = (dailyRevenue[dayKey] || 0) + Number(apt.value);

@@ -42,7 +42,10 @@ export async function GET(request: Request) {
     });
 
     const totalAppointments = appointments.length;
-    const grossRevenue = appointments.reduce((sum, apt) => sum + Number(apt.value), 0);
+    const grossRevenue = appointments.reduce(
+  (sum: number, apt: any) => sum + Number(apt.value),
+  0
+);
     const dailyFixedCost = settings?.monthlyFixedCost ? Number(settings.monthlyFixedCost) / 30 : 0;
     const netProfit = grossRevenue - dailyFixedCost;
 
